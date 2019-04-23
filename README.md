@@ -1,7 +1,10 @@
-# README
+Cura10 App
+---
+Learn.co Rails Project
+---
+## Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app will allow users to create curated top ten lists for catergories ranging from art, music, food, etc. Users will be able to vote up lists for popularity and favorite other user lists to their home page.
 
 Things you may want to cover:
 
