@@ -8,3 +8,13 @@ lists
 
 items
   belongs to a list
+
+
+Lists
+  Name
+  category
+
+items
+  Name
+  link
+  list_id
