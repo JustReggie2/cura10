@@ -9,120 +9,24 @@
 <!-- Extra -->
 	<div id="extra">
 		<div class="container">
+			<% @lists.in_groups_of(3).each do |l_group| %>
 			<div class="row no-collapse-1">
+				<% l_group.each do |list| %>
 				<section class="4u">
 					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
+						<h2><%= list.name if list %></h2>
+						<h3><%= list.category if list %></h3>
 						<ol type="1">
 							<li>First item</li>
 							<li>Second item</li>
 							<li>Third item</li>
 						</ol>
-						<a href="#" class="button">Full List</a>
+						<%= link_to "Full List", list_path(list), class: "button" if list %>
 					</div>
 				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
+				<% end %>
 			</div>
-			<div class="row no-collapse-1">
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-			</div>
-			<div class="row no-collapse-1">
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-				<section class="4u">
-					<div class="box">
-						<h2>List Name</h2>
-						<h3>Category</h3>
-						<ol type="1">
-							<li>First item</li>
-							<li>Second item</li>
-							<li>Third item</li>
-						</ol>
-						<a href="#" class="button">Full List</a>
-					</div>
-				</section>
-			</div>
+			<% end %>
 		</div>
 	</div>
 
