@@ -9,10 +9,16 @@ class ListsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    List.create(list_params)
   end
 
   def show
     @list = List.find(params[:id])
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:name, :category_name)
   end
 end
