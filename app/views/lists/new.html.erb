@@ -14,19 +14,24 @@
 					</div>
 					<div class="row half">
 						<div class="12u">
-							<input class="text" type="text" name="email" id="email" placeholder="Email" />
+							<%= f.text_field :category_name, list: "categories_autocomplete", placeholder: "Category" %>
+						  <datalist id="categories_autocomplete">
+						    <% Category.all.each do |category| %>
+						      <option value="<%= category.name.capitalize %>">
+						    <% end %>
+						  </datalist>
 						</div>
 					</div>
 					<div class="row half">
 						<div class="12u">
-							<textarea name="message" id="message" placeholder="Message"></textarea>
+
 						</div>
 					</div>
 					<div class="row half">
 						<div class="12u">
 							<ul class="actions">
 								<li>
-									<input type="submit" value="Send Message" class="button alt" />
+									<%= f.submit %>
 								</li>
 							</ul>
 						</div>
