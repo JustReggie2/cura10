@@ -6,10 +6,10 @@
 					<h2>Cura10 a list</h2>
 					<span class="byline">Add websites or links to create your list</span>
 				</header>
-				<form method="post" action="#">
+				<%= form_for @list do |f| %>
 					<div class="row half">
 						<div class="12u">
-							<input class="text" type="text" name="name" id="name" placeholder="Name" />
+							<%= f.text_field :name, placeholder: "Name" %>
 						</div>
 					</div>
 					<div class="row half">
@@ -31,7 +31,7 @@
 							</ul>
 						</div>
 					</div>
-				</form>
+				<% end %>
 			</section>
 		</div>
 	</div>
