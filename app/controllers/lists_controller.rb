@@ -9,7 +9,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    List.create(list_params)
+    list = List.create(list_params)
+    redirect_to list_path(list)
   end
 
   def show
