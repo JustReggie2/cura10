@@ -6,9 +6,14 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+
+    10.times do
+      @list.items.build(:desc_link)
+    end
   end
 
   def create
+
     list = List.create(list_params)
     redirect_to list_path(list)
   end
@@ -20,6 +25,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :category_name)
+    params.require(:list).permit(:name, :category_name, :items_attributes[])
   end
 end
