@@ -22,14 +22,12 @@
 						  </datalist>
 						</div>
 					</div>
-
-						<%= f.fields_for :items do |item| %>
-							<div class="row half">
-								<div class="12u">
-									<%= item.text_field :desc_link, placeholder: "Image, Media or Website Link #{item.index + 1}" %>
-								</div>
-							</div>
-
+					<%= f.fields_for :items do |item| %>
+					<div class="row half">
+						<div class="12u">
+							<%= item.text_field :desc_link, placeholder: "Image, Media or Website Link #{item.index + 1}" %>
+						</div>
+					</div>
 					<% end %>
 					<div class="row half">
 						<div class="12u">
