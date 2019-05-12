@@ -1,2 +1,22 @@
-<%= @list.name %>
-<%= @list.category.name if @list.category.name %>
+<!-- Banner -->
+	<div id="banner" class="container">
+		<section>
+			<h1><strong><%= @list.name %></strong></h1>
+      <h2><%= @list.category.name.capitalize if @list.category.name %></h2>
+		</section>
+	</div>
+
+<!-- Extra -->
+  <div id="extra">
+    <div class="container">
+      <div class="box">
+        <%= @list.items.each do |item| %>
+        <section>
+          <ol class="image fit">
+            <li><%= image_tag "#{item.desc_link}" %></li>
+          </ol>
+        </section>
+        <% end %>
+      </div>
+    </div>
+  </div>
