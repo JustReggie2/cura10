@@ -18,8 +18,8 @@
 							<h2><%= list.name %></h2>
 							<h3><%= list.category.name.capitalize if list.category_id %></h3>
 							<% list.items.first(3).each do |item| %>
-							<ol type="1">
-								<li><%= item.desc_link %></li>
+							<ol class="image rnd thumb">
+								<li><%= image_tag "#{item.desc_link}" %></li>
 							</ol>
 							<% end %>
 							<%= link_to "Full List", list_path(list), class: "button" if list %>
