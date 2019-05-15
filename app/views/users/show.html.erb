@@ -3,7 +3,7 @@
 	<div id="banner" class="container">
 		<section>
 			<p>Welcome <strong><%= @user.name %></strong></p>
-			<a href="#" class="button medium">Read More</a>
+			<%= link_to 'Log Out', logout_path, class: "button medium" %>
 		</section>
 	</div>
 
