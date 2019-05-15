@@ -5,15 +5,10 @@
         <h2>Log In Below:</h2>
         <span class="byline"></span>
       </header>
-      <%= form_for @user do |f| %>
+      <%= form_for :user, url: login_path do |f| %>
         <div class="row half">
           <div class="12u">
             <%= f.text_field :name, placeholder: "Name" %>
-          </div>
-        </div>
-        <div class="row half">
-          <div class="12u">
-            <%= f.text_field :email, placeholder: "Email" %>
           </div>
         </div>
         <div class="row half">
@@ -23,14 +18,9 @@
         </div>
         <div class="row half">
           <div class="12u">
-            <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-          </div>
-        </div>
-        <div class="row half">
-          <div class="12u">
             <ul class="actions">
               <li>
-                <%= f.submit "Sign Up!", class: "button alt" %>
+                <%= f.submit "Log In", class: "button alt" %>
               </li>
             </ul>
           </div>
