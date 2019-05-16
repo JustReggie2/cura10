@@ -23,9 +23,19 @@
                 <%= f.submit "Log In", class: "button alt" %>
               </li>
             </ul>
+            <p>OR</p>
           </div>
         </div>
       <% end %>
+      <div class="row half">
+        <div class="12u">
+          <ul class="actions">
+            <li>
+              <%= link_to('Log in with Facebook!', '/auth/facebook', class: "button alt") %>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </div>
 </div>
