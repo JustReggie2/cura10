@@ -30,17 +30,30 @@
 		<div class="wrapper style1">
     <!-- Header -->
       <div id="header" class="skel-panels-fixed">
+        <% if !logged_in? %>
         <div id="logo">
-          <h1><img src="<%= @user.image if @user.image %>" alt=""></h1>
+          <h1>Cura10</h1>
+          <span class="tag">by CarterBlack Apps</span>
         </div>
         <nav id="nav">
           <ul>
-            <li class="active"><%= link_to "Homepage", root_path %></li>
-            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-            <li><a href="right-sidebar.html">Right Sidebar</a></li>
-            <li><a href="no-sidebar.html">No Sidebar</a></li>
+            <li class="active"><%= link_to 'Sign Up', new_user_url %></li>
+            <li class="active"><%= link_to 'Log In', login_path %></li>
           </ul>
         </nav>
+        <% else %>
+        <div id="logo">
+          <h1><img src="<%= current_user.image if current_user.image %>" alt=""></h1>
+        </div>
+        <nav id="nav">
+          <ul>
+            <li class="active"><%= link_to "Homepage", user_path(current_user) %></li>
+            <li class="active"><%= link_to "Feed", lists_path %></li>
+            <li class="active"><%= link_to "Cura10 List", new_list_path %></li>
+            <li class="active"><%= link_to "Log Out", logout_path %></li>
+          </ul>
+        </nav>
+        <% end %>
       </div>
 
     <%= yield %>
