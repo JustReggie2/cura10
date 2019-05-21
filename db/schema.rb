@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_213922) do
+ActiveRecord::Schema.define(version: 2019_05_21_215015) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorite_lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "list_id"
+    t.integer "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
