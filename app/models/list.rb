@@ -1,6 +1,9 @@
 class List < ApplicationRecord
+  belongs_to :user
   belongs_to :category, optional: true
   has_many :items
+  has_many :favorite_lists
+  has_many :favorited_by, through: :favorite_lists, source: :user
   accepts_nested_attributes_for :items
   # def item_desc_links=(items)
   #   items.each do |desc_link|
