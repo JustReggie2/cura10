@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :lists do
-    member { post :favorite }
+    post :favorite, on: :member 
   end
 
   resources :users, only: [:new, :create, :show]
