@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
 
-  resources :lists, only: [:index, :show, :new, :create, :edit, :update]
+  resources :lists do
+    member { post :favorite }
+  end
 
   resources :users, only: [:new, :create, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
