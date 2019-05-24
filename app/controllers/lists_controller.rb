@@ -21,6 +21,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
+  def favorite
+    raise params.inspect
+  end
+
   private
 
   def list_params
