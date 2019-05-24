@@ -17,6 +17,7 @@
           </ol>
         </section>
         <% end %>
+				<%= render partial: 'favorites/button', locals: {user: current_user, list: @list} %>
       </div>
     </div>
   </div>
