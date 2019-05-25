@@ -13,6 +13,6 @@ class User < ApplicationRecord
   end
 
   def favorited?(list)
-    self.favorites.find_by(id: list.id)
+    self.favorites.find_by(id: list.id).present?
   end
 end
