@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :lists do
-    post :favorite, on: :member 
+    post :favorite, on: :member
   end
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    resources :lists, only: [:new, :create, :show]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'lists#index'
 end
