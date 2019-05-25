@@ -49,7 +49,7 @@
           <ul>
             <li class="active"><%= link_to "Homepage", user_path(current_user) %></li>
             <li class="active"><%= link_to "Feed", lists_path %></li>
-            <li class="active"><%= link_to "Cura10 List", new_list_path %></li>
+            <li class="active"><%= link_to "Cura10 List", new_user_list_path(current_user) %></li>
             <li class="active"><%= link_to "Log Out", logout_path %></li>
           </ul>
         </nav>
