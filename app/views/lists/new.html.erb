@@ -6,7 +6,8 @@
 					<h2>Cura10 a list</h2>
 					<span class="byline">Add websites or links to create your list</span>
 				</header>
-				<%= form_for @list do |f| %>
+				<%= form_for(@list) do |f| %>
+					<%= f.hidden_field :user_id %>
 					<div class="row half">
 						<div class="12u">
 							<%= f.text_field :name, placeholder: "Name" %>
