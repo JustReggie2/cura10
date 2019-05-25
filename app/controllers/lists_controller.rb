@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new
+    @list = List.new(user_id: params[:user_id])
     10.times do
       @list.items.build
     end
@@ -14,6 +14,7 @@ class ListsController < ApplicationController
   def create
     # raise params.inspect
     @list = List.create(list_params)
+    # raise params.inspect
     redirect_to list_path(@list)
   end
 
@@ -28,6 +29,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :category_name, items_attributes: [:desc_link])
+    params.require(:list).permit(:name, :category_name, :user_id, items_attributes: [:desc_link])
   end
 end
