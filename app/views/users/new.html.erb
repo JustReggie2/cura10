@@ -8,12 +8,12 @@
       <%= form_for @user do |f| %>
         <div class="row half">
           <div class="12u">
-            <%= f.text_field :name, placeholder: "Name" %>
+            <%= f.text_field :name, placeholder: (@user.errors.full_messages_for(:name).first || "Name") %>
           </div>
         </div>
         <div class="row half">
           <div class="12u">
-            <%= f.text_field :email, placeholder: "Email" %>
+            <%= f.text_field :email, placeholder: (@user.errors.full_messages_for(:email).first || "Email") %>
           </div>
         </div>
         <div class="row half">
