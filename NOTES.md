@@ -15,6 +15,21 @@ Lists
   category
 
 items
-  Name
-  link
+  desc_link
   list_id
+
+3. add login with sessions controller   
+
+4. create helper to decide link render (i.e. image, video, mp3, website)
+  - will iterate over desc_link
+  if image(.jpg, .png) render image
+  elsif song(.mp3) render player
+  ... maybe use case/when
+
+5. top list section  
+
+5. errors and flash messages
+  - no lists made... you have no lists
+
+#remember
+  - figure out how to up vote and favorite list
