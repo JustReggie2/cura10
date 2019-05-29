@@ -18,7 +18,7 @@
         </div>
         <div class="row half">
           <div class="12u">
-            <%= f.password_field :password, placeholder: "Password" %>
+            <%= f.password_field :password, placeholder: (@user.errors.full_messages_for(:password).first || "Password") %>
           </div>
         </div>
         <div class="row half">
