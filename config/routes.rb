@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     resources :lists, only: [:new, :create, :show]
   end
+
+  resources :categories, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'lists#index'
 end
