@@ -23,7 +23,15 @@ class ListsController < ApplicationController
   end
 
   def favorite
-    raise params.inspect
+    @user = current_user
+    @list = List.find(params[:id])
+    if @user.favorited?(@list)
+      @user.favorites.delete(@list)
+      redirect_to list_path(@list)
+    else
+      @user.favorites << @list
+      redirect_to list_path(@list)
+    end
   end
 
   private
