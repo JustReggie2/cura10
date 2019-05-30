@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @lists = @user.lists
+    @favs = @user.favorites
   end
 
   private
