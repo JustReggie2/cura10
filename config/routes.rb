@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :lists, only: [:new, :create, :show]
   end
 
-  resources :categories, only: [:index]
+  resources :categories, only: [:index] do
+    resources :lists, only: [:index]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'lists#index'
 end
