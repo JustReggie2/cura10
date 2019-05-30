@@ -1,7 +1,11 @@
 class ListsController < ApplicationController
 
   def index
-    @lists = List.all
+    if params[:category_id]
+      @lists = Category.find(params[:category_id]).lists
+    else
+      @lists = List.all
+    end 
   end
 
   def new
