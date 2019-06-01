@@ -1,11 +1,13 @@
 class ListsController < ApplicationController
+  before_action :require_logged_in
+  skip_before_action :require_logged_in, only: [:index]
 
   def index
     if params[:category_id]
       @lists = Category.find(params[:category_id]).lists
     else
       @lists = List.all
-    end 
+    end
   end
 
   def new
