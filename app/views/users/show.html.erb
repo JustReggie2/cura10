@@ -2,7 +2,11 @@
 <!-- Banner -->
 	<div id="banner" class="container">
 		<section>
-			<p>Welcome <strong><%= @user.name %></strong>! See your lists below or check out favorites.</p>
+			<% if @user.lists.present? %>
+				<p>Welcome <strong><%= @user.name %></strong>! See your lists below or check out favorites.</p>
+			<% else %>
+				<p>Welcome <strong><%= @user.name %></strong>! You have yet to create a list. Let's make one <strong><%= link_to "here", new_list_path %></strong>.</p>
+			<% end %>
 			<a href="#favs" class="button medium">Favorites</a>
 		</section>
 	</div>
