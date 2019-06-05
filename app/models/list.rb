@@ -7,6 +7,7 @@ class List < ApplicationRecord
   # has_many :votes, through: :favorite_lists, source: :user
   accepts_nested_attributes_for :items
 
+
   def category_name=(name)
     self.category = Category.find_or_create_by(name: name)
   end
@@ -15,5 +16,5 @@ class List < ApplicationRecord
     self.category ? self.category.name : nil
   end
 
-
+  # scope :most_votes, -> {where(artist_id: 2..5)}.count
 end
