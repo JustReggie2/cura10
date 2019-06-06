@@ -16,5 +16,9 @@ class List < ApplicationRecord
     self.category ? self.category.name : nil
   end
 
-  # scope :most_votes, -> {where(artist_id: 2..5)}.count
+  # scope :most_favorited, -> {where(artist_id: 2..5)}.count
+  def fav_count
+    self.favorited_by.count
+  end
+
 end
