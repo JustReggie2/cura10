@@ -4,7 +4,7 @@ class List < ApplicationRecord
   has_many :items
   has_many :favorite_lists
   has_many :favorited_by, through: :favorite_lists, source: :user
-  # has_many :votes, through: :favorite_lists, source: :user
+  has_many :votes, through: :favorite_lists, source: :user
   accepts_nested_attributes_for :items
 
 
@@ -16,9 +16,13 @@ class List < ApplicationRecord
     self.category ? self.category.name : nil
   end
 
-  # scope :most_favorited, -> {where(artist_id: 2..5)}.count
+  
   def fav_count
     self.favorited_by.count
+  end
+
+  def vote_count
+    self.votes.count
   end
 
 end
