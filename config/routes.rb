@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :lists do
     member { post :favorite, :up_vote, :down_vote }
   end
-
+  get '/lists/most_votes' => 'lists#most_votes'
+  
   resources :users, only: [:new, :create, :show] do
     resources :lists, only: [:new, :create, :show]
   end
