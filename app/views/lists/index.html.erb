@@ -2,7 +2,8 @@
 	<div id="banner" class="container">
 		<section>
 			<p>Welcome to <strong>Cura10</strong>! Here you can see all of Cura10's lists from all users. Vote for your favorite by checking out the <strong>Full List</strong> or you can make your own list <strong><%= link_to "here", new_list_path %></strong>.</p>
-			<a href="#" class="button medium">Read More</a>
+			<p>Check out our most popular lists with the most votes:</p>
+			<%= link_to "Most Votes", lists_most_votes_path, class: "button" if list %>
 		</section>
 	</div>
 
