@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
 
+  get 'lists/most_votes', to: 'lists#most_votes'
+
   resources :lists do
     member { post :favorite, :up_vote, :down_vote }
   end
-  get '/lists/most_votes' => 'lists#most_votes'
-  
+
+
   resources :users, only: [:new, :create, :show] do
     resources :lists, only: [:new, :create, :show]
   end
