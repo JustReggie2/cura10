@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
-gem 'omniauth'
+gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 # Use ActiveStorage variant
