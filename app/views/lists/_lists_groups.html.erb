@@ -1,0 +1,27 @@
+<!-- Extra -->
+	<div id="extra">
+		<div class="container">
+			<% lists.in_groups_of(3).each do |l_group| %>
+			<div class="row no-collapse-1">
+				<% l_group.each do |list| %>
+					<% if list %>
+					<section class="4u">
+						<div class="box">
+							<h2><%= list.name %></h2>
+							<h3><%= link_to list.category.name.capitalize, category_lists_path(list.category_id) if list.category_id %></h3>
+							<h4>Created by: <%= list.user.name if list.user_id %></h4>
+							<h5>Votes: <%= list.vote_count %></h5>
+							<% list.items.first(3).each do |item| %>
+							<ol class="image rnd thumb">
+								<li><%= image_tag "#{item.desc_link}" %></li>
+							</ol>
+							<% end %>
+							<%= link_to "Full List", list_path(list), class: "button" if list %>
+						</div>
+					</section>
+					<% end %>
+				<% end %>
+			</div>
+			<% end %>
+		</div>
+	</div>
