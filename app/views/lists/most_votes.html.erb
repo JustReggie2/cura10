@@ -1,3 +1,2 @@
-<% @lists.each do |list| %>
-  <%= list.name %>
-<% end %>
+
+ <%= render partial: 'lists/lists_groups', locals: {lists: @lists} %>
