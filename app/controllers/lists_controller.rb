@@ -10,6 +10,10 @@ class ListsController < ApplicationController
     end
   end
 
+  def most_votes
+    @lists = List.most_votes
+  end
+
   def new
     @list = List.new(user_id: params[:user_id])
     10.times do
@@ -73,6 +77,7 @@ class ListsController < ApplicationController
       redirect_to list_path(@list), alert: "You must favorite list to to vote."
     end
   end
+
 
 
   private
