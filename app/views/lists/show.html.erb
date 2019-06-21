@@ -20,9 +20,8 @@
 				<%= render partial: 'favorites/button', locals: {user: current_user, list: @list} %>
 				<%= link_to "up vote", up_vote_list_path(@list), method: :post, class: "button" %>
 				<%= link_to "down vote", down_vote_list_path(@list), method: :post, class: "button" %>
-				<% if @list.user == @user %>
-					<%= link_to "delete list", list_path(@list), method: :delete, class: "button" %>
-				<% end %>
+				<%= link_to "delete list", list_path(@list), method: :delete, class: "button" if list_user?(@list) %>
+
       </div>
     </div>
   </div>
