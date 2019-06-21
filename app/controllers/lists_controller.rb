@@ -83,6 +83,7 @@ class ListsController < ApplicationController
     @user = current_user
     @list = List.find(params[:id])
     if @list.user == @user
+      @list.items.delete
       @list.delete
     else
       redirect_to list_path(@list), alert: "Something went wrong. Try again."
