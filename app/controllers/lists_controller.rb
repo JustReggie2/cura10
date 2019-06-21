@@ -30,6 +30,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @user = current_user
   end
 
   def favorite
@@ -78,7 +79,16 @@ class ListsController < ApplicationController
     end
   end
 
-
+  def destroy
+    @user = current_user
+    @list = List.find(params[:id])
+    if @list.user == @user
+      @list.delete
+    else
+      redirect_to list_path(@list), alert: "Something went wrong. Try again."
+    end
+    redirect_to user_path(@user), notice: "List has been deleted."
+  end
 
   private
 
