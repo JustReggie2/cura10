@@ -1,5 +1,0 @@
-/* Errors */
-.field_with_errors input[type=text] {
- border: solid black;
- font-weight: bold;
-}
