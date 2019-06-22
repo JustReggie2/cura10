@@ -10,9 +10,7 @@ class SessionsController < ApplicationController
         u.image = auth['info']['image']
         u.password = SecureRandom.hex
       end
-
       session[:user_id] = user.id
-
       redirect_to user_path(user)
     else
       user = User.find_by(name: params[:user][:name])
@@ -26,7 +24,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-
     redirect_to root_path
   end
 
