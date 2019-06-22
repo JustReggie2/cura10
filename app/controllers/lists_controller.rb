@@ -15,7 +15,8 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new(user_id: params[:user_id])
+    user_id = current_user.id
+    @list = List.new(user_id: user_id)
     10.times do
       @list.items.build
     end
