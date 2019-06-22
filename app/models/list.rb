@@ -27,14 +27,5 @@ class List < ApplicationRecord
 
   scope :has_votes, -> { joins(:favorite_lists).where('vote = ?', 1) }
   scope :most_votes, -> { has_votes.group(:list_id).order('count(list_id) DESC').limit(10) }
-  # scope :most_votes, -> { has_votes.order('list_id DESC').group(:list_id).count }
-  # def self.count_votes
-  #   joins(:favorite_lists).group(:list_id).select("vote, count(*) as total_votes")
-  # end
-  # def self.most_votes
-  #   where("vote >= 2")
-  # end
 
-  # scope :most_votes, -> {where(list_id: self.maximum(:vote))}
-  # I want to figure out the list_id that has the largest vote count...
 end
