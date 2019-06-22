@@ -20,7 +20,4 @@ class User < ApplicationRecord
     self.favorites.find_by(id: list.id).present?
   end
 
-  # def up_vote(list)
-  #   list.votes = list.votes +1
-  # end
 end
