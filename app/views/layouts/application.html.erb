@@ -44,6 +44,7 @@
         <% else %>
         <div id="logo">
           <h1><img src="<%= current_user.image if current_user.image %>" alt=""></h1>
+          <span class="tag"><%= current_user.name %></span>
         </div>
         <nav id="nav">
           <ul>
