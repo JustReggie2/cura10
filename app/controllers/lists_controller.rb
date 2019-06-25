@@ -38,10 +38,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     if @user.favorited?(@list)
       @user.favorites.delete(@list)
-      redirect_to list_path(@list)
+      redirect_to list_path(@list), notice: "List has been removed from your favorites."
     else
       @user.favorites << @list
-      redirect_to list_path(@list)
+      redirect_to list_path(@list), notice: "List has been added to your favorites."
     end
   end
 
