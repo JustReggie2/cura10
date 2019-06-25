@@ -5,8 +5,10 @@ class List < ApplicationRecord
   has_many :favorite_lists
   has_many :favorited_by, through: :favorite_lists, source: :user
   has_many :votes, through: :favorite_lists, source: :user
+  validates :name, presence: true
   accepts_nested_attributes_for :items
-
+  scope :has_votes, -> { joins(:favorite_lists).where('vote = ?', 1) }
+  scope :most_votes, -> { has_votes.group(:list_id).order('count(list_id) DESC').limit(10) }
 
   def category_name=(name)
     self.category = Category.find_or_create_by(name: name)
@@ -25,7 +27,6 @@ class List < ApplicationRecord
     self.votes.count
   end
 
-  scope :has_votes, -> { joins(:favorite_lists).where('vote = ?', 1) }
-  scope :most_votes, -> { has_votes.group(:list_id).order('count(list_id) DESC').limit(10) }
+
 
 end
