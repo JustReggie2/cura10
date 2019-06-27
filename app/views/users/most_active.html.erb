@@ -1,0 +1,9 @@
+<!-- Banner -->
+	<div id="banner" class="container">
+		<section>
+			<h1><strong><%= @user.name %> is Cura10's most active user! </strong></h1>
+      <h2>Check out their lists below.</h2>
+		</section>
+	</div>
+
+  <%= render partial: 'lists/lists_groups', locals: {lists: @lists} %>
