@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   get 'lists/most_votes', to: 'lists#most_votes'
+  get 'users/most_active', to: 'users#most_active'
 
   resources :lists do
     member { post :favorite, :up_vote, :down_vote }
