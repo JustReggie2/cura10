@@ -28,7 +28,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
-      render :new, alert: @list.errors.full_messages
+      render :new, notice: "Something went wrong. Try again."
     end
   end
 
