@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     @favs = @user.favorites
   end
 
+  def most_active
+    @user = User.most_active
+    @lists = @user.lists
+  end
+
+
   private
 
   def user_params
