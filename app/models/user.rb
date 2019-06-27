@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: "is invalid" }
   validates :password, presence: true, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/, message: "must be at least 6 characters and include one number & one letter"}
   has_secure_password
+  scope :most_active, -> {joins(:lists).group(:user_id).order('count(user_id) DESC').first}
 
   def favorited!(list)
     self.favorites << list
@@ -19,5 +20,7 @@ class User < ApplicationRecord
   def favorited?(list)
     self.favorites.find_by(id: list.id).present?
   end
+
+
 
 end
